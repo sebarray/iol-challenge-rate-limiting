@@ -10,7 +10,7 @@ Para detalles de diseno y decisiones tecnicas, ver [DESIGN.md](./DESIGN.md).
 go run ./cmd/ratelimitd
 ```
 
-La API escucha en `:8080` por defecto.
+La API escucha en `:8085` por defecto.
 
 ## Endpoints
 
@@ -21,7 +21,7 @@ La API escucha en `:8080` por defecto.
 
 | Variable | Default | Descripcion |
 | --- | ---: | --- |
-| `HTTP_ADDR` | `:8080` | Direccion HTTP. |
+| `HTTP_ADDR` | `:8085` | Direccion HTTP. |
 | `LOG_LEVEL` | `info` | Nivel de logs: `debug`, `info`, `warn` o `error`. |
 | `RATE_LIMIT_CAPACITY` | `10` | Capacidad maxima del bucket por cliente. |
 | `RATE_LIMIT_REFILL_RATE` | `5` | Tokens recargados por segundo. |
@@ -33,7 +33,7 @@ Ejemplo en PowerShell:
 $env:RATE_LIMIT_CAPACITY = "10"
 $env:RATE_LIMIT_REFILL_RATE = "5"
 $env:LOG_LEVEL = "info"
-$env:HTTP_ADDR = ":8080"
+$env:HTTP_ADDR = ":8085"
 go run ./cmd/ratelimitd
 ```
 
@@ -49,12 +49,12 @@ Para levantarlo en background:
 docker compose up -d --build
 ```
 
-El compose publica la API en `127.0.0.1:8080`.
+El compose publica la API en `127.0.0.1:8085`.
 
 ## Probar
 
 ```bash
-curl -i http://localhost:8080/
+curl -i http://localhost:8085/
 ```
 
 Cuando el limite se alcanza, la API responde `429 Too Many Requests` con `Retry-After` y headers `RateLimit-*`.

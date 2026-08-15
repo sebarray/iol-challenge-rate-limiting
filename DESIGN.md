@@ -60,7 +60,7 @@ El logger se mantiene en la capa HTTP, donde existen datos utiles como metodo, p
 
 La configuracion vive en `cmd/config` y se carga desde variables de entorno:
 
-- `HTTP_ADDR`: direccion HTTP, por defecto `:8080`.
+- `HTTP_ADDR`: direccion HTTP, por defecto `:8085`.
 - `LOG_LEVEL`: nivel de logs, por defecto `info`.
 - `RATE_LIMIT_CAPACITY`: capacidad maxima del bucket, por defecto `10`.
 - `RATE_LIMIT_REFILL_RATE`: tokens recargados por segundo, por defecto `5`.

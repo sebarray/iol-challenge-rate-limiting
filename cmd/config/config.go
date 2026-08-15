@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	DefaultHTTPAddr            = ":8080"
+	DefaultHTTPAddr            = ":8085"
 	DefaultLogLevel            = slog.LevelInfo
 	DefaultRateLimitCapacity   = 10
 	DefaultRateLimitRefillRate = 5.0

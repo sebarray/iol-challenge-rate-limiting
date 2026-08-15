@@ -20,8 +20,8 @@ COPY --from=build /out/ratelimitd /app/ratelimitd
 
 USER app
 
-EXPOSE 8080
+EXPOSE 8085
 
-ENV HTTP_ADDR=:8080
+ENV HTTP_ADDR=:8085
 
 ENTRYPOINT ["/app/ratelimitd"]
