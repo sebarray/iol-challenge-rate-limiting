@@ -3,12 +3,14 @@ package http
 import (
 	"fmt"
 	nethttp "net/http"
+
+	"rate-limiter/internal/platform/httpx"
 )
 
 func (h *Handler) Routes() nethttp.Handler {
 	mux := nethttp.NewServeMux()
 	h.RegisterRoutes(mux)
-	return h.LoggingMiddleware(mux)
+	return h.LoggingMiddleware(httpx.CORSMiddleware(mux))
 }
 
 func (h *Handler) RegisterRoutes(mux *nethttp.ServeMux) {
